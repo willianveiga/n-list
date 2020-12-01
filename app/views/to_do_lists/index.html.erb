@@ -1,0 +1,29 @@
+<% content_for(:head) do %>
+  <%= javascript_pack_tag('pages/to-do-lists/index') %>
+<% end %>
+
+<div class="index">
+  <% if notice.present? %>
+    <p class="alert alert--success"><%= notice %></p>
+  <% end %>
+
+  <% if @to_do_lists.any? %>
+    <ul class="index__to-do-list-list">
+      <% @to_do_lists.each do |to_do_list| %>
+        <li class="index__to-do-list to-do-list to-do-list--compact">
+          <%= link_to(to_do_list.name, edit_to_do_list_path(to_do_list), class: 'title-link') %>
+          <div>
+            <%= link_to(clone_to_do_list_path(to_do_list), method: :post, class: 'action-link') do %>
+              <i class="fas fa-clone" title="Clone to-do list"></i>
+            <% end %>
+            <%= link_to(to_do_list, method: :delete, data: { confirm: 'Are you sure?' }, class: 'action-link') do %>
+              <i class="fas fa-trash-alt" title="Remove to-do list"></i>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="alert alert--warning">There are no to-do lists yet.</p>
+  <% end %>
+</div>

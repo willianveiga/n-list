@@ -1,0 +1,34 @@
+@import "normalize.css";
+
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/v4-shims";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import "../utils/colors.scss";
+
+@import "layouts/application.scss";
+@import "../components/alert/alert";
+@import "../components/button/button";
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  height: 100vh;
+}
+
+input[type=text] {
+  border: none;
+  padding: .5em;
+}
+
+.ui-sortable-helper {
+  background: $white;
+  border: 1px solid $alto !important;
+  padding: .5em;
+  width: 50% !important;
+}

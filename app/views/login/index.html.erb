@@ -1,0 +1,18 @@
+<% content_for(:head) do %>
+  <%= javascript_pack_tag('pages/login/index') %>
+<% end %>
+
+<div class="login">
+  <div class="login__box">
+    <%= image_tag(asset_pack_path('media/images/logo.png'), title: 'NList', alt: 'NList logo') %>
+    <h1 class="login__title">Sign In to NList</h1>
+    <%=
+    link_to(
+      user_google_oauth2_omniauth_authorize_path,
+      method: :post,
+      class: 'login__button button button--primary'
+    ) do %>
+      <%= image_tag(asset_pack_path('media/images/google-icon.png'), alt: 'Google icon', width: '16') %>
+      Sign in with Google
+    <% end %>
+</div>

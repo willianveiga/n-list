@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NList</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <%= stylesheet_link_tag('application', media: 'all', 'data-turbolinks-track': 'reload') %>
+    <%= javascript_pack_tag('application', 'data-turbolinks-track': 'reload') %>
+
+    <%= yield(:head) %>
+  </head>
+
+  <body class="application">
+    <% if user_signed_in? %>
+      <header class="application__main-header main-header">
+        <h1 class="main-header__title">
+          <%=
+          link_to(root_path) do
+            image_tag(asset_pack_path('media/images/logo.png'), title: 'NList', alt: 'NList logo')
+          end
+          %>
+        </h1>
+        <nav>
+          <ul class="main-header__list">
+            <li class="main-header__list-item">
+              <%= link_to('Home', root_path, class: 'main-header__list-item-link') %>
+            </li>
+            <li class="main-header__list-item">
+              <%= link_to('New to-do list', new_to_do_list_path, class: 'main-header__list-item-link') %>
+            </li>
+            <li class="main-header__list-item">
+                <%= link_to('Sign out', destroy_user_session_path, class: 'main-header__list-item-link') %>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

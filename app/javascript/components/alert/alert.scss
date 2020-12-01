@@ -1,0 +1,25 @@
+@import "../../utils/colors.scss";
+
+.alert {
+  background: transparent;
+  border: none;
+  padding: 1em;
+}
+
+.alert--success {
+  background: $zanah;
+  border: 1px solid $fringy-flower;
+  color: $parsley;
+}
+
+.alert--error {
+  background: $cherub;
+  border: 1px solid $azalea;
+  color: $persia-plum;
+}
+
+.alert--warning {
+  background: $barley-white;
+  border: 1px solid $colonial-white;
+  color: $yukon-gold;
+}

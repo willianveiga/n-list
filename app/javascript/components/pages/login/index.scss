@@ -1,0 +1,27 @@
+@import "../../../utils/colors.scss";
+
+.login {
+  align-items: center;
+  background: $sea-green;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+.login__box {
+  background: $white;
+  padding: 3em;
+  text-align: center;
+  box-shadow: 0 0 5px $mine-shaft;
+}
+
+.login__title {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.login__button {
+  display: block;
+  margin-top: 1em;
+}

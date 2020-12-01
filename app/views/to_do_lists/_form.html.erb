@@ -1,0 +1,38 @@
+<% content_for(:head) do %>
+  <%= javascript_pack_tag('pages/to-do-lists/form', 'data-turbolinks-track': 'reload') %>
+<% end %>
+
+<div class="form">
+  <% if notice.present? %>
+    <p class="form__alert alert alert--success"><%= notice %></p>
+  <% end %>
+
+  <% if @to_do_list.errors.any? %>
+    <p class="form__alert alert alert--error"><%= @to_do_list.errors.full_messages.first %></p>
+  <% end %>
+
+  <%= form_with(model: @to_do_list, local: true, class: 'form__to-do-list to-do-list') do |form| %>
+    <%= form.text_field(:name, class: 'to-do-list__input', autofocus: true) %>
+    <div id="tasks">
+      <%= form.fields_for(:tasks) do |task| %>
+        <%= render('task_fields', f: task) %>
+      <% end %>
+    </div>
+    <div class="to-do-list__links-wrapper links">
+      <%=
+      link_to_add_association(
+        'New task',
+        form,
+        :tasks,
+        data: {
+          association_insertion_method: 'append',
+          association_insertion_node: '#tasks'
+        },
+        class: 'button button--primary to-do-list__link-add-task'
+      )
+      %>
+    </div>
+    <%= form.submit('Save', class: 'button button--primary') %>
+    <%= link_to('Cancel', to_do_lists_path, class: 'button button--primary') %>
+  <% end %>
+</div>

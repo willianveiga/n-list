@@ -1,0 +1,31 @@
+@import "../../utils/colors.scss";
+
+.task {
+  align-items: center;
+  border-bottom: 1px solid $mischka;
+  display: flex;
+}
+
+.task__drag-icon-wrapper {
+  cursor: grab;
+}
+
+.task__drag-icon {
+  color: $mine-shaft;
+  font-size: 1em;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.task__checkbox {
+  margin: 0 .5em;
+}
+
+.task__input {
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.task__input-done {
+  text-decoration: line-through;
+}

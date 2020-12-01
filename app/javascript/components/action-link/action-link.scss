@@ -1,0 +1,10 @@
+@import "../../utils/colors.scss";
+
+.action-link {
+  color: $mine-shaft;
+}
+
+.action-link:hover {
+  color: $cod-gray;
+  transition-duration: 1s;
+}

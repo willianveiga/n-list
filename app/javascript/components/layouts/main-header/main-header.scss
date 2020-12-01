@@ -1,0 +1,38 @@
+@import "../../../utils/colors.scss";
+
+.main-header {
+  align-items: center;
+  display: flex;
+  background: $sea-green;
+  padding: .5em 0;
+}
+
+.main-header__title {
+  margin: 0;
+}
+
+.main-header__title:hover {
+  transition: 1.5s;
+  opacity: .8;
+}
+
+.main-header__list {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.main-header__list-item {
+  padding-left: 1em;
+}
+
+.main-header__list-item-link {
+  color: $deep-fir;
+  text-decoration: none;
+}
+
+.main-header__list-item-link:hover {
+  opacity: .8;
+  text-decoration: underline;
+  transition: 1.5s;
+}

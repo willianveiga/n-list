@@ -1,0 +1,24 @@
+{
+  "name": "to_do_list",
+  "private": true,
+  "dependencies": {
+    "@andxor/jquery-ui-touch-punch-fix": "^1.0.2",
+    "@fortawesome/fontawesome-free": "^5.15.0",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.2.1",
+    "cocoon-js": "^0.0.5",
+    "jquery": "^3.5.1",
+    "jquery-ui": "^1.12.1",
+    "normalize.css": "^8.0.1",
+    "turbolinks": "^5.2.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

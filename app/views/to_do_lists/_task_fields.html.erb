@@ -1,0 +1,12 @@
+<div class="nested-fields to-do-list__task task">
+  <span class="task__drag-icon-wrapper">
+    <%= link_to('☰', '#', class: 'task__drag-icon', title: 'Move task') %>
+  </span>
+
+  <%= f.check_box(:done, class: 'task__checkbox') %>
+  <%= f.text_field(:content, class: "task__input #{f.object.done ? 'task__input-done' : ''}") %>
+  <%= f.hidden_field(:position) %>
+  <%= link_to_remove_association(f, class: 'action-link') do %>
+    <i class="fas fa-trash-alt" title="Remove task"></i>
+  <% end %>
+</div>
