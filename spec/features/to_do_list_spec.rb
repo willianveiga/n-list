@@ -2,7 +2,7 @@
 
 require_relative '../rails_helper'
 
-describe 'To-Do List', type: :feature do
+describe 'To-Do List' do
   let(:user) { create(:user) }
 
   before { login_as(user) }
@@ -97,6 +97,16 @@ describe 'To-Do List', type: :feature do
 
         expect(page).to(have_content("Name can't be blank"))
       end
+    end
+  end
+
+  context 'when to-do list does not belong to the current user' do
+    let(:to_do_list) { create(:to_do_list, user: create(:user)) }
+
+    before { visit("/to_do_lists/#{to_do_list.id}/edit") }
+
+    it 'redirects the user to an unauthorized error page' do
+      expect(page).to(have_content('You may not have authorization to access this resource.'))
     end
   end
 

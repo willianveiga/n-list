@@ -2,7 +2,8 @@
 
 class ToDoListsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_to_do_list, only: %i[edit update destroy clone]
+  before_action :set_to_do_list, except: %i[index new create]
+  before_action :render_unauthorized, except: %i[index new create], unless: :current_user_has_permissions?
 
   def index
     @to_do_lists = current_user.to_do_lists.order(:name)
@@ -45,6 +46,14 @@ class ToDoListsController < ApplicationController
 
   def set_to_do_list
     @to_do_list = ToDoList.find(params[:id])
+  end
+
+  def render_unauthorized
+    render(file: 'public/401.html', layout: false, status: :unauthorized)
+  end
+
+  def current_user_has_permissions?
+    @to_do_list.user == current_user
   end
 
   def to_do_list_params

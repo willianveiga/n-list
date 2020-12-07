@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# frozen_string_literal: true
-
 require 'spec_helper'
 require 'support/factory_bot'
 
@@ -20,6 +18,7 @@ end
 RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.include Devise::Test::ControllerHelpers, type: :controller
   config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = true
 end

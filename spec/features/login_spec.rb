@@ -2,7 +2,7 @@
 
 require_relative '../rails_helper'
 
-describe 'Login', type: :feature do
+describe 'Login' do
   context 'when user does not exist' do
     before { visit('/') }
 
