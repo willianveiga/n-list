@@ -1,5 +1,5 @@
 {
-  "name": "to_do_list",
+  "name": "n-list",
   "private": true,
   "dependencies": {
     "@andxor/jquery-ui-touch-punch-fix": "^1.0.2",
