@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'active_support/core_ext/integer/time'
+
 Rails.application.configure do
   config.action_controller.allow_forgery_protection = false
   config.action_controller.perform_caching = false
@@ -9,6 +11,8 @@ Rails.application.configure do
   config.action_view.cache_template_loading = true
   config.active_storage.service = :test
   config.active_support.deprecation = :stderr
+  config.active_support.disallowed_deprecation = :raise
+  config.active_support.disallowed_deprecation_warnings = []
   config.cache_classes = false
   config.cache_store = :null_store
   config.consider_all_requests_local = true
